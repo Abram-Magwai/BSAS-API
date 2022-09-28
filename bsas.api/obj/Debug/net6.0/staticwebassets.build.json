@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DIkY9Q70EKirJdCsX9axYzrItyDxlmK/Y77yw4JhdoM=",
+  "Source": "bsas.api",
+  "BasePath": "_content/bsas.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
