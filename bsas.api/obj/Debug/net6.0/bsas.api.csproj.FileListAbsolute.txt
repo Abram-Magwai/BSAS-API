@@ -25,3 +25,7 @@ C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\obj\De
 C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\obj\Debug\net6.0\bsas.api.pdb
 C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\obj\Debug\net6.0\bsas.api.genruntimeconfig.cache
 C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\obj\Debug\net6.0\ref\bsas.api.dll
+C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\bin\Debug\net6.0\bsas.core.dll
+C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\bin\Debug\net6.0\bsas.core.pdb
+C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\The_Gost\Work\Magwai cap\BSAS\data\Application\BSAS API\bsas.api\bin\Debug\net6.0\itextsharp.dll
