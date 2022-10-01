@@ -28,7 +28,7 @@ public class ReportController : ControllerBase
         {
             return _fnbService.GetTransactions(statementFileBytes);
         }
-        return new List<Transaction>();
+        return new List<Transaction>(){new Transaction{Description = "no transactions"}};
     }
     [HttpPost("transaction/summary")]
     public List<TransactionSummary> GetTransactionSummaries(string bankName, IFormFile statement)
