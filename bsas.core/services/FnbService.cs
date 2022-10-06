@@ -95,7 +95,7 @@ namespace bsas.core.services
                         }
                         else if (trs == transactionSummaries.Count() - 1)
                         {
-                            transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount });
+                            transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount , TransactionType = tr.TransactionType});
                             break;
                         }
                     }
