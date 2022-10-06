@@ -1,8 +1,8 @@
 using bsas.api.Controllers;
 using bsas.core.constants;
 using bsas.core.helper;
+using bsas.core.interfaces;
 using bsas.core.models;
-using bsas.core.services;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -30,7 +30,7 @@ public class ReportController : ControllerBase
         }
         return new List<Transaction>(){new Transaction{Description = "no transactions"}};
     }
-    [HttpPost("transaction/summary")]
+    [HttpPost("transactions/summary")]
     public List<TransactionSummary> GetTransactionSummaries(string bankName, IFormFile statement)
     {
         if (!FileHelper.IsPdf(statement.FileName))

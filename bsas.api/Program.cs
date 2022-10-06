@@ -1,3 +1,4 @@
+using bsas.core.interfaces;
 using bsas.core.services;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,16 +1,12 @@
 using System.Text;
 using bsas.core.constants;
+using bsas.core.interfaces;
 using bsas.core.models;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
 namespace bsas.core.services
 {
-    public interface IFnbService
-    {
-        public List<Transaction> GetTransactions(byte[] fileBytes);
-        List<TransactionSummary> GetTransactionSummaries(List<Transaction> transactions);
-    }
     public class FnbService : IFnbService
     {
         public List<Transaction> GetTransactions(byte[] fileBytes)
@@ -93,6 +89,7 @@ namespace bsas.core.services
                         if (transactionSummaries[trs].Description == tr.Description)
                         {
                             transactionSummaries[trs].Total += tr.Amount;
+                            transactionSummaries[trs].TransactionType = tr.TransactionType;
                             transactionSummaries[trs].Visits++;
                             break;
                         }

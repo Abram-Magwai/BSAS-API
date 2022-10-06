@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8OichDaMPM6jjdbOhtAUrTgmmVwQKu+5jfpK1cBE2doKfLHsdEjP57bUsJ71blvTnamlDBfwvkdJvJ/GtlqbEw==",
+  "dgSpecHash": "Xprrmghh82Ex3BOYXrLfKZbCEDJj2DtDA3j4kh3gO69HHMjqWSY29nM1ay+x/nqfUvfC53MXO+IQ6v0EFPILpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
+  "projectFilePath": "c:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\The_Gost\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\The_Gost\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512"
