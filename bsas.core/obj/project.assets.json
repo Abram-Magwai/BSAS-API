@@ -68,11 +68,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
+      "projectUniqueName": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
       "projectName": "bsas.core",
-      "projectPath": "c:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
+      "projectPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
       "packagesPath": "C:\\Users\\The_Gost\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\obj\\",
+      "outputPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

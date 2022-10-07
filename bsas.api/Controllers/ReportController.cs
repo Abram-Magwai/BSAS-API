@@ -39,8 +39,10 @@ public class ReportController : ControllerBase
         Stream fileStream = statement.OpenReadStream();
         var statementFileBytes = FileHelper.streamToByteArray(fileStream);
 
-        if (bankName.ToUpper() == BankNameConstants.FNB)
-            return _fnbService.GetTransactionSummaries(_fnbService.GetTransactions(statementFileBytes));
+        if (bankName.ToUpper() == BankNameConstants.FNB) {
+            var check = _fnbService.GetTransactionSummaries(_fnbService.GetTransactions(statementFileBytes));
+            return check;
+        }
         return new List<TransactionSummary>();
     }
 }

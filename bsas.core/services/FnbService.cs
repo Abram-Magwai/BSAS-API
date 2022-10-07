@@ -80,7 +80,7 @@ namespace bsas.core.services
             {
                 if (transactionSummaries.Count() == 0)
                 {
-                    transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount });
+                    transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount, TransactionType = tr.TransactionType });
                 }
                 else
                 {
