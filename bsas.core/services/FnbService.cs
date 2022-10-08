@@ -9,6 +9,15 @@ namespace bsas.core.services
 {
     public class FnbService : IFnbService
     {
+        public static bool DocumentIsValid(string[] formated)
+        {
+            if (formated.Length > 21)
+            {
+                if ((formated[21].Split(" ")).Length > 1 && (formated[21].Split(" "))[1] == "fnb.co.za")
+                    return true;
+            }
+            return false;
+        }
         public List<Transaction> GetTransactions(byte[] fileBytes)
         {
             List<Transaction> transactionList = new();
@@ -20,6 +29,8 @@ namespace bsas.core.services
                     string text = PdfTextExtractor.GetTextFromPage(reader, pageNo, strategy);
                     text = Encoding.UTF8.GetString(ASCIIEncoding.Convert(Encoding.Default, Encoding.UTF8, Encoding.Default.GetBytes(text)));
                     string[] formated = text.Split("\n");
+                    if(!DocumentIsValid(formated))
+                        return new List<Transaction>(){new Transaction{Description = "Not FNB statement", }};
                     List<String> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
                     for (int transaction = 0; transaction < formated.Length - 1; transaction++)
                     {
@@ -95,7 +106,7 @@ namespace bsas.core.services
                         }
                         else if (trs == transactionSummaries.Count() - 1)
                         {
-                            transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount , TransactionType = tr.TransactionType});
+                            transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount, TransactionType = tr.TransactionType });
                             break;
                         }
                     }
