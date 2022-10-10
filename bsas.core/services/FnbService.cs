@@ -9,8 +9,9 @@ namespace bsas.core.services
 {
     public class FnbService : IFnbService
     {
-        public static bool DocumentIsValid(string[] formated)
+        public static bool DocumentIsValid(string[] formated, int pageNo)
         {
+            if(pageNo > 1) return true;
             if (formated.Length > 21)
             {
                 if ((formated[21].Split(" ")).Length > 1 && (formated[21].Split(" "))[1] == "fnb.co.za")
@@ -29,7 +30,7 @@ namespace bsas.core.services
                     string text = PdfTextExtractor.GetTextFromPage(reader, pageNo, strategy);
                     text = Encoding.UTF8.GetString(ASCIIEncoding.Convert(Encoding.Default, Encoding.UTF8, Encoding.Default.GetBytes(text)));
                     string[] formated = text.Split("\n");
-                    if(!DocumentIsValid(formated))
+                    if(!DocumentIsValid(formated, pageNo))
                         return new List<Transaction>(){new Transaction{Description = "Not FNB statement", }};
                     List<String> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
                     for (int transaction = 0; transaction < formated.Length - 1; transaction++)
@@ -87,26 +88,26 @@ namespace bsas.core.services
         {
             List<TransactionSummary> transactionSummaries = new();
 
-            transactions.ForEach(tr =>
+            transactions.ForEach(transaction =>
             {
                 if (transactionSummaries.Count() == 0)
                 {
-                    transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount, TransactionType = tr.TransactionType });
+                    transactionSummaries.Add(new TransactionSummary { Description = transaction.Description ?? "", Total = transaction.Amount, TransactionType = transaction.TransactionType });
                 }
                 else
                 {
-                    for (int trs = 0; trs < transactionSummaries.Count(); trs++)
+                    for (int index = 0; index < transactionSummaries.Count(); index++)
                     {
-                        if (transactionSummaries[trs].Description == tr.Description)
+                        if (transactionSummaries[index].Description == transaction.Description)
                         {
-                            transactionSummaries[trs].Total += tr.Amount;
-                            transactionSummaries[trs].TransactionType = tr.TransactionType;
-                            transactionSummaries[trs].Visits++;
+                            transactionSummaries[index].Total += transaction.Amount;
+                            transactionSummaries[index].TransactionType = transaction.TransactionType;
+                            transactionSummaries[index].Visits++;
                             break;
                         }
-                        else if (trs == transactionSummaries.Count() - 1)
+                        else if (index == transactionSummaries.Count() - 1)
                         {
-                            transactionSummaries.Add(new TransactionSummary { Description = tr.Description ?? "", Total = tr.Amount, TransactionType = tr.TransactionType });
+                            transactionSummaries.Add(new TransactionSummary { Description = transaction.Description ?? "", Total = transaction.Amount, TransactionType = transaction.TransactionType });
                             break;
                         }
                     }
