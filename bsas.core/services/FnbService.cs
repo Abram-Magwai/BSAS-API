@@ -11,7 +11,7 @@ namespace bsas.core.services
     {
         public static bool DocumentIsValid(string[] formated, int pageNo)
         {
-            if(pageNo > 1) return true;
+            if (pageNo > 1) return true;
             if (formated.Length > 21)
             {
                 if ((formated[21].Split(" ")).Length > 1 && (formated[21].Split(" "))[1] == "fnb.co.za")
@@ -19,8 +19,9 @@ namespace bsas.core.services
             }
             return false;
         }
-        public List<Transaction> GetTransactions(byte[] fileBytes)
+        public StatementDetails GetStatementDetails(byte[] fileBytes)
         {
+            StatementDetails statementDetails = new();
             List<Transaction> transactionList = new();
             using (PdfReader reader = new PdfReader(fileBytes))
             {
@@ -30,9 +31,10 @@ namespace bsas.core.services
                     string text = PdfTextExtractor.GetTextFromPage(reader, pageNo, strategy);
                     text = Encoding.UTF8.GetString(ASCIIEncoding.Convert(Encoding.Default, Encoding.UTF8, Encoding.Default.GetBytes(text)));
                     string[] formated = text.Split("\n");
-                    if(!DocumentIsValid(formated, pageNo))
-                        return new List<Transaction>(){new Transaction{Description = "Not FNB statement", }};
+                    if (!DocumentIsValid(formated, pageNo))
+                        return new();
                     List<String> months = new List<string>() { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+                    statementDetails.StatementNumber = pageNo == 1 ? int.Parse(formated[27].Split(":")[1]) : statementDetails.StatementNumber;
                     for (int transaction = 0; transaction < formated.Length - 1; transaction++)
                     {
                         string[] info = formated[transaction].Split(" ");
@@ -81,8 +83,8 @@ namespace bsas.core.services
                     }
                 }
             }
-
-            return transactionList;
+            statementDetails.Transactions = transactionList;
+            return statementDetails;
         }
         public List<TransactionSummary> GetTransactionSummaries(List<Transaction> transactions)
         {
@@ -115,6 +117,26 @@ namespace bsas.core.services
                 }
             });
             return transactionSummaries;
+        }
+        public List<TransactionSummary> Compare(List<TransactionSummary> first, List<TransactionSummary> second)
+        {
+            List<TransactionSummary> commonDescriptions = new();
+            int length = first.Count < second.Count ? first.Count : second.Count;
+            for (int i = 0; i < length; i++)
+            {
+                bool exists = false;
+                for (int a = 0; a < (length == first.Count ? second.Count : first.Count); a++)
+                {
+                    if (first[i].Description == second[a].Description)
+                    {
+                        exists = !exists;
+                        break;
+                    }
+                }
+                if (exists)
+                    commonDescriptions.Add(first[i]);
+            }
+            return commonDescriptions;
         }
     }
 }

@@ -1,3 +1,5 @@
-/.vscode
-/bin
-/obj
+.vscode
+.vs
+bsas.api/bin
+bsas.api/obj
+bsas.api/properties

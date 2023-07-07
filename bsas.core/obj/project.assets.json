@@ -62,24 +62,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\The_Gost\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\The_Gost\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
+      "projectUniqueName": "C:\\Users\\The_Gost\\Work\\Magwai cap\\Apps\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
       "projectName": "bsas.core",
-      "projectPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
+      "projectPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\Apps\\BSAS\\Application\\BSAS API\\bsas.core\\bsas.core.csproj",
       "packagesPath": "C:\\Users\\The_Gost\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\BSAS\\Application\\BSAS API\\bsas.core\\obj\\",
+      "outputPath": "C:\\Users\\The_Gost\\Work\\Magwai cap\\Apps\\BSAS\\Application\\BSAS API\\bsas.core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\The_Gost\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -87,9 +82,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.pkg.github.com/toyingroupsystems/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -128,7 +121,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   },

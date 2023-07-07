@@ -4,7 +4,8 @@ namespace bsas.core.interfaces
 {
     public interface IFnbService
     {
-        public List<Transaction> GetTransactions(byte[] fileBytes);
+        StatementDetails GetStatementDetails(byte[] fileBytes);
         List<TransactionSummary> GetTransactionSummaries(List<Transaction> transactions);
+        List<TransactionSummary> Compare(List<TransactionSummary> first, List<TransactionSummary> second);
     }
 }
