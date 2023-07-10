@@ -7,9 +7,7 @@ The FNB Bank Statement Summarizer API is a .NET project that allows you to summa
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -29,3 +27,11 @@ The FNB Bank Statement Summarizer API simplifies the process of analyzing and ex
 
    ```shell
    git clone https://github.com/your-username/fnb-bank-statement-summarizer.git
+## Contributing
+Contributions are welcome! If you would like to contribute to the FNB Bank Statement Summarizer API, please follow these steps:
+
+Fork the repository.
+Create a new branch for your feature/bug fix.
+Commit your changes and push the branch to your forked repository.
+Submit a pull request describing your changes.
+Please ensure that you adhere to the code of conduct and follow the contribution guidelines when submitting pull requests.
